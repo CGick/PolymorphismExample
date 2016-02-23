@@ -9,6 +9,6 @@ public class Food extends Item{
 	}
 	
 	public void digest(){
-		System.out.printf("You digested %d value of food.%n", value);
+		System.out.printf("You digested %d value of %s.%n", value, getName());
 	}
 }

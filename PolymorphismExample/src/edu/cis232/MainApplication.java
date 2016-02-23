@@ -8,12 +8,19 @@ public class MainApplication {
 		Item[] items = { new Item("item 1"), new Food("Food", 20), new Turkey() };
 		
 		for(Item item : items){
-			if(item instanceof Food){
-				Food food = (Food)item;
-				food.digest();
-			} else {
-				System.out.println(item + " is not food");
-			}
+			eatItemIfFood(item);
+		}
+		
+		Food food = new Food("Chicken", 50);
+		eatItemIfFood(food);
+	}
+	
+	public static void eatItemIfFood(Item item){
+		if(item instanceof Food){
+			Food food = (Food)item;
+			food.digest();
+		} else {
+			System.out.println(item + " is not food");
 		}
 	}
 

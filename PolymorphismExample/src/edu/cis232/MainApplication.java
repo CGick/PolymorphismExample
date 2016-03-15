@@ -1,18 +1,19 @@
 package edu.cis232;
 
-import edu.cis232.item.*;
+import java.util.Random;
+
+import edu.cis232.item.Food;
+import edu.cis232.item.Item;
+import edu.cis232.item.Pasta;
+import edu.cis232.item.Turkey;
 
 public class MainApplication {
 
 	public static void main(String[] args) {
-		Item[] items = { new Item("item 1"), new Food("Food", 20), new Turkey() };
+		Item[] items = { new Item("item 1"), new Food("Food", 20), new Turkey(), new Pasta() };
+		Random num = new Random();
+		eatItemIfFood(items[num.nextInt(items.length)]);
 		
-		for(Item item : items){
-			eatItemIfFood(item);
-		}
-		
-		Food food = new Food("Chicken", 50);
-		eatItemIfFood(food);
 	}
 	
 	public static void eatItemIfFood(Item item){
